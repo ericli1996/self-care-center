@@ -73,7 +73,7 @@ section {
 }
 
 .result-box {
-  display: flex;
+  display: grid;
   height: 125px;
   width: 700px;
   background-color: #ffffff;
@@ -81,6 +81,20 @@ section {
   margin-right: auto;
   margin-top: 80px;
   border-radius: 10px;
+}
+
+.delete-msg {
+  background-color: #134d71;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 30px;
+  margin: auto;
+  cursor: pointer;
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
