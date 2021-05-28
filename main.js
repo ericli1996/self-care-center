@@ -45,7 +45,7 @@ function getRandomIndex(array) {
 
 function getRandomQuote() {
   if (affirmChecked.checked) {
-    resultBox.innerHTML = `<p class="center">${affirmationList[getRandomIndex(affirmationList)]}</p>`;
+    resultBox.innerHTML = `<p class="center">${affirmationList[getRandomIndex(affirmationList)]}</p><div><button class="delete-quote">I don't like this quote</button></div>`;
   } else if (mantraChecked.checked) {
     resultBox.innerHTML = `<p class="center">${mantraList[getRandomIndex(mantraList)]}</p>`;
   }
