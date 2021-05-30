@@ -1,7 +1,9 @@
 var receiveMsg = document.querySelector(".receive-msg");
-var resultBox = document.querySelector(".result-box");
+var resultBox = document.querySelector(".results-box");
 var affirmChecked = document.getElementById("affirmation");
 var mantraChecked = document.getElementById("mantra");
+var deleteBtn = document.querySelector(".delete-quote");
+var currentMsg = document.querySelector("p");
 
 var affirmationList = [
   "I forgive myself and set myself free.",
@@ -37,17 +39,28 @@ var mantraList = [
   "I am the sky, the rest is weather."
 ];
 
-receiveMsg.addEventListener("click", getRandomQuote);
+receiveMsg.addEventListener("click", getRandomMsg);
+deleteBtn.addEventListener("click", deleteMsg);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function getRandomQuote() {
+function getRandomMsg() {
+  deleteBtn.classList.remove("hidden");
   if (affirmChecked.checked) {
-    resultBox.innerHTML = `<p class="center">${affirmationList[getRandomIndex(affirmationList)]}</p><div><button class="delete-quote">I don't like this quote</button></div>`;
+    resultBox.innerHTML = `<p class="center">${affirmationList[getRandomIndex(affirmationList)]}</p>`;
   } else if (mantraChecked.checked) {
     resultBox.innerHTML = `<p class="center">${mantraList[getRandomIndex(mantraList)]}</p>`;
   }
+}
 
+function deleteMsg() {
+  getRandomMsg();
+  if (affirmChecked.checked) {
+    affirmationList.splice([currentMsg], 1);
+  } else if (mantraChecked.checked) {
+    mantraList.splice([currentMsg], 1);
+  }
+  alert("You won't see this message again.");
 }
