@@ -1,24 +1,51 @@
 # Self Care Center
-## Overview
-How can I care for myself? One way is with affirmations and mantras!
-Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
-Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+- Deploy website by clicking [here](https://ericli1996.github.io/self-care-center/)!
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+- [Project Spec](https://frontend.turing.edu/projects/module-1/self-care-center.html)
 
-## Learning Goals
+## Contributors
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+- Eric Li
+- Heather Faerber
+- Kayla Wood
 
-## Setup
+## User Instructions
 
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
+  Sometimes we all we need is a bit of inspiration to keep going. On load, the page presents you with two options. You can select from either an affirmation or a mantra, and simply click on the "Receive Message" to show a message. In the lower box, the meditation symbol will disappear and you will be shown either a mantra or affirmation corresponding to your selection.
 
+  If you don't like the message shown, click the "I don't like this message button", click the "OK" button on the "You won't see this message again" alert box, and it shows you a new message of your type selection, and will not show that message again.
+
+## Technologies Used
+
+- HTML
+  - Inputs
+  - Buttons
+  - Divs, Sections, Forms
+  - Img
+- CSS
+  - Box Model
+  - Properties
+    - display
+    - margin, padding
+    - border radius
+- JavaScript
+  - Query Selectors
+  - Event Listeners
+  - Event Handlers
+  - Interpolation
+  - Arrays
+  - Array Methods
+  - Alert
+- DOM
+  - Manipulation of Data Model
+
+## Future Additions
+
+- Modal Alert - Instead of seeing a default javascript alert, in which functionality of the page is paused until you click "OK", I would like a window to show above the main window, notifying that the message has been deleted, and to fade out by itself.
+
+- Save a Custom Quote - User can input custom messages and save them to the list so they can be shown again.
+
+- Login Page - User can access saved messages on their respective profile.
+
+- Music Option - User checks "Tunes" radio button instead of "Affirmation" or "Mantra", and tunes play to sooth the soul.
