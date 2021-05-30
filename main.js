@@ -1,8 +1,12 @@
+// Query Selectors 👇
 var receiveMsg = document.querySelector(".receive-msg");
-var resultBox = document.querySelector(".result-box");
+var resultBox = document.querySelector(".result-box-content");
 var affirmChecked = document.getElementById("affirmation");
 var mantraChecked = document.getElementById("mantra");
+var deleteBtn = document.querySelector(".delete-quote");
+var currentMsg = document.querySelector("p");
 
+// Message Arrays 👇
 var affirmationList = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -16,7 +20,8 @@ var affirmationList = [
   "I am full of energy and vitality and my mind is calm and peaceful.",
   "Every day I am getting healthier and stronger.",
   "I honor my body by trusting the signals that it sends me.",
-  "I manifest perfect health by making smart choices."
+  "I manifest perfect health by making smart choices.",
+  "I like TURTLES"
 ];
 
 var mantraList = [
@@ -37,17 +42,34 @@ var mantraList = [
   "I am the sky, the rest is weather."
 ];
 
-receiveMsg.addEventListener("click", getRandomQuote);
+// Event Listeners 👇
+receiveMsg.addEventListener("click", getRandomMsg);
+deleteBtn.addEventListener("click", deleteMsg);
 
+// Event Handlers and Functions 👇
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function getRandomQuote() {
+function getRandomMsg() {
   if (affirmChecked.checked) {
     resultBox.innerHTML = `<p class="center">${affirmationList[getRandomIndex(affirmationList)]}</p>`;
+    deleteBtn.classList.remove("hidden");
   } else if (mantraChecked.checked) {
     resultBox.innerHTML = `<p class="center">${mantraList[getRandomIndex(mantraList)]}</p>`;
+    deleteBtn.classList.remove("hidden");
   }
+}
 
+function deleteMsg() {
+  getRandomMsg();
+  if (affirmChecked.checked) {
+    affirmationList.splice([currentMsg], 1);
+  } else if (mantraChecked.checked) {
+    mantraList.splice([currentMsg], 1);
+  }
+  alert("You won't see this message again.");
+  // Note to instructors: I know we went over how the default JS alert is outdated/ugly.
+  // Would a modal be used instead? I was thinking it would be nice if the notification
+  // also faded out after while, without affecting any other functionality.
 }
